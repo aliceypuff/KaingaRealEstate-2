@@ -17,6 +17,8 @@ namespace KaingaRealEstate
         private ITClerkMainForm frmMenu;
         private int aSuburbID;
         private CurrencyManager cmSuburb;
+
+        bool reset = false;
         public UpdateSuburbForm(DataController dc, ITClerkMainForm mnu)
         {
             InitializeComponent();
@@ -43,14 +45,23 @@ namespace KaingaRealEstate
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             frmMenu.Show();
+
+            reset = true;
+            bool detailValid = ValidateChildren(ValidationConstraints.Enabled);
+
             ClearFields();
         }
 
         private void cboSuburb_SelectedIndexChanged(object sender, EventArgs e)
         {
             string suburb;
+
+            if (reset)
+            {
+                reset = false;
+            }
 
             if (cboSuburb.SelectedItem != null)
             {
@@ -124,6 +135,13 @@ namespace KaingaRealEstate
             TextBox tb = (TextBox)sender;
             string tbName = tb.Name;
             Label tbLabel = this.Controls.Find("lbl" + tbName.Substring(3), true)[0] as Label;
+
+            if (reset)
+            {
+                e.Cancel = false;
+                errorProviderDetails.SetError(tb, null);
+                return;
+            }
 
             if (validateContent(tb))
             {

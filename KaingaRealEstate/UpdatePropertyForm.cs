@@ -18,7 +18,9 @@ namespace KaingaRealEstate
         private CurrencyManager cmProperty, cmSuburb, cmSeller, cmCategory;
         private void UpdatePropertyForm_Load(object sender, EventArgs e)
         {
+            ClearFields();
             LoadProperties();
+            DisableUpdate(this);
         }
 
         public UpdatePropertyForm(DataController dc, SalesClerkMainForm mnu)
@@ -41,7 +43,7 @@ namespace KaingaRealEstate
             txtStreetAddress.Text = "";
             txtSuburb.Text = "";
             txtPropertyDescription.Text = "";
-            nudPrice.Value = 1000000;
+            nudPrice.ResetText();
             txtCategoryDescription.Text = "";
             txtLastName.Text = "";
             txtFirstName.Text = "";
@@ -81,6 +83,8 @@ namespace KaingaRealEstate
             DataRow drSeller = DC.dtSeller.Rows[cmSeller.Position];
             txtLastName.Text = drSeller["lastName"].ToString();
             txtFirstName.Text = drSeller["firstName"].ToString();
+
+            EnableUpdate(this);
         }
         private void btnUpdateProperty_Click(object sender, EventArgs e)
         {
@@ -115,6 +119,28 @@ namespace KaingaRealEstate
             this.Hide();
             frmMenu.Show();
             ClearFields();
+        }
+        private void DisableUpdate(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                if (c.GetType() == typeof(TextBox))
+                {
+                    c.Enabled = false;
+                }
+            }
+            nudPrice.Enabled = false;
+        }
+        private void EnableUpdate(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                if (c.GetType() == typeof(TextBox))
+                {
+                    c.Enabled = true;
+                }
+            }
+            nudPrice.Enabled = true;
         }
     }
 }

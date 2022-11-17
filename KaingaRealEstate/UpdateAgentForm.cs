@@ -66,11 +66,10 @@ namespace KaingaRealEstate
         {
             string agent;
 
-            if(reset)
+            if (reset)
             {
                 reset = false;
             }
-
 
             if (cboAgent.SelectedItem != null)
             {
@@ -161,8 +160,11 @@ namespace KaingaRealEstate
             string tbName = tb.Name;
             Label tbLabel = this.Controls.Find("lbl" + tbName.Substring(3), true)[0] as Label;
 
-            if (reset) {
+            if (reset) 
+            {
                 e.Cancel = false;
+                errorProviderDetails.SetError(tb, null);
+                return;
             }
 
             if (validateContent(tb))

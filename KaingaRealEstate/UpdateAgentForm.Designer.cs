@@ -221,6 +221,11 @@ namespace KaingaRealEstate
             // 
             // nudSalary
             // 
+            this.nudSalary.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nudSalary.Location = new System.Drawing.Point(562, 282);
             this.nudSalary.Maximum = new decimal(new int[] {
             20000000,

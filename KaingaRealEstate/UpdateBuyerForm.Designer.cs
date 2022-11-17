@@ -375,7 +375,6 @@ namespace KaingaRealEstate
             this.label8.Size = new System.Drawing.Size(17, 19);
             this.label8.TabIndex = 169;
             this.label8.Text = "*";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -426,7 +425,6 @@ namespace KaingaRealEstate
             this.label12.Size = new System.Drawing.Size(17, 19);
             this.label12.TabIndex = 173;
             this.label12.Text = "*";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label1
             // 

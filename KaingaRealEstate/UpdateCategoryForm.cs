@@ -16,6 +16,8 @@ namespace KaingaRealEstate
         private ITClerkMainForm frmMenu;
         private int aCategoryID;
         private CurrencyManager cmCategory;
+
+        bool reset = false;
         public UpdateCategoryForm(DataController dc, ITClerkMainForm mnu)
         {
             InitializeComponent();
@@ -52,6 +54,10 @@ namespace KaingaRealEstate
         {
             this.Hide();
             frmMenu.Show();
+
+            reset = true;
+            bool detailValid = ValidateChildren(ValidationConstraints.Enabled);
+
             ClearFields();
         }
         private void DisableUpdate(Control parent)
@@ -79,6 +85,13 @@ namespace KaingaRealEstate
             TextBox tb = (TextBox)sender;
             string tbName = tb.Name;
             Label tbLabel = this.Controls.Find("lbl" + tbName.Substring(3), true)[0] as Label;
+
+            if (reset)
+            {
+                e.Cancel = false;
+                errorProviderDetails.SetError(tb, null);
+                return;
+            }
 
             if (validateContent(tb))
             {
@@ -108,6 +121,11 @@ namespace KaingaRealEstate
         private void cboCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             string cat;
+
+            if (reset)
+            {
+                reset = false;
+            }
 
             if (cboCategory.SelectedItem != null)
             {

@@ -19,6 +19,7 @@ namespace KaingaRealEstate
         private int aBuyerID, aAgentID;
         private CurrencyManager cmBuyer, cmAgent;
 
+        bool reset = false;
         public UpdateBuyerForm(DataController dc, BuyerLiaisonClerkMainForm mnu)
         {
             InitializeComponent();
@@ -30,8 +31,12 @@ namespace KaingaRealEstate
         }
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             frmMenu.Show();
+
+            reset = true;
+            bool detailValid = ValidateChildren(ValidationConstraints.Enabled);
+
             ClearFields();
         }
 
@@ -69,6 +74,11 @@ namespace KaingaRealEstate
         private void cboBuyer_SelectedIndexChanged(object sender, EventArgs e)
         {
             string buyer;
+
+            if (reset)
+            {
+                reset = false;
+            }
 
             if (cboBuyer.SelectedItem != null)
             {
@@ -170,6 +180,13 @@ namespace KaingaRealEstate
             string tbName = tb.Name;
             Label tbLabel = this.Controls.Find("lbl" + tbName.Substring(3), true)[0] as Label;
 
+            if (reset)
+            {
+                e.Cancel = false;
+                errorProviderDetails.SetError(tb, null);
+                return;
+            }
+
             if (validateContent(tb))
             {
                 e.Cancel = false;
@@ -181,16 +198,6 @@ namespace KaingaRealEstate
                 tb.Focus();
                 errorProviderDetails.SetError(tb, $"{tbLabel.Text} is incorrect or missing.");
             }
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
         }
 
         private bool validateContent(TextBox tb)

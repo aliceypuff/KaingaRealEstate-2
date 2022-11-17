@@ -22,7 +22,6 @@ namespace KaingaRealEstate
             DC = dc;
             frmMenu = mnu;
             frmMenu.Hide();
-            //bindControls();
             cmBuyer = (CurrencyManager)this.BindingContext[DC.dsKainga, "BUYER"];
         }
         private void ClearFields()
@@ -89,14 +88,14 @@ namespace KaingaRealEstate
         {
             DataRow drBuyer = DC.dtBuyer.Rows[cmBuyer.Position];
             DataRow[] drBuyerSuburbs = drBuyer.GetChildRows(DC.dtBuyer.ChildRelations["BUYER_BUYERSUBURB"]);
-            var space = new string(' ', 31);
+            var space = new string(' ', 21);
 
             lstSuburbsAssigned.Items.Add("ID\r\tName" + space + "Importance\r\n");
             foreach (DataRow drBuyerSuburb in drBuyerSuburbs)
             {
                 DataRow drSuburb = drBuyerSuburb.GetParentRow(DC.dtBuyerSuburb.ParentRelations["SUBURB_BUYERSUBURB"]);
                 string aName = drSuburb["suburbName"].ToString();
-                space = new String(' ', (42 - aName.Length));
+                space = new String(' ', (32 - aName.Length));
                 lstSuburbsAssigned.Items.Add(drSuburb["suburbID"] + "\r\t" + aName + space + drBuyerSuburb["importance"] + "\r\n");
             }
         }
@@ -115,13 +114,14 @@ namespace KaingaRealEstate
                 string suburb = lstSuburbsAssigned.SelectedItem.ToString();
                 string[] parts = suburb.Split('\t');
                 aSuburbID = Convert.ToInt32(parts[0]);
-                // MessageBox.Show("buyerID =" + aBuyerID + "\nsuburbID =" + aSuburbID); works 
             }
         }
         private void btnRemoveBuyerSuburb_Click(object sender, EventArgs e)
         {
-            if (lstSuburbsAssigned.SelectedIndex == 0) // cannot click it if the suburb is not selected 
+            // handle if the suburb or buyer is not selected
+            if ((lstSuburbsAssigned.SelectedIndex == 0) || (lstSuburbsAssigned.SelectedItem == null)) 
             {
+                MessageBox.Show("Please select a buyer and a suburb to remove", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
@@ -143,12 +143,3 @@ namespace KaingaRealEstate
         }
     }
 }
-// To do list:
-// [x] Get all of the buyers
-// [x] Display the list of all of the buyers (buyer id, last name, first name)
-// [] Get the selected buyer’s details
-// [] Display buyer’s details (buyer id, last name, first name, credit status)
-// [] Get suburbs assigned to buyer
-// [] Display list of buyer suburbs (suburb id, suburb name and importance)
-// [] Delete suburb from buyer
-// [] Display success message

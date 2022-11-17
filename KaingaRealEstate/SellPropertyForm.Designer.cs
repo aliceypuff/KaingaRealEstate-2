@@ -57,7 +57,7 @@ namespace KaingaRealEstate
             this.label1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(317, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 37);
+            this.label1.Size = new System.Drawing.Size(141, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sell Property";
             // 
@@ -130,7 +130,7 @@ namespace KaingaRealEstate
             this.cboProperties.FormattingEnabled = true;
             this.cboProperties.Location = new System.Drawing.Point(198, 94);
             this.cboProperties.Name = "cboProperties";
-            this.cboProperties.Size = new System.Drawing.Size(473, 32);
+            this.cboProperties.Size = new System.Drawing.Size(473, 27);
             this.cboProperties.TabIndex = 8;
             this.cboProperties.SelectedIndexChanged += new System.EventHandler(this.cboProperties_SelectedIndexChanged);
             // 
@@ -139,7 +139,7 @@ namespace KaingaRealEstate
             this.txtPropertyID.Location = new System.Drawing.Point(198, 141);
             this.txtPropertyID.Name = "txtPropertyID";
             this.txtPropertyID.ReadOnly = true;
-            this.txtPropertyID.Size = new System.Drawing.Size(79, 32);
+            this.txtPropertyID.Size = new System.Drawing.Size(79, 27);
             this.txtPropertyID.TabIndex = 9;
             // 
             // txtStreetAddress
@@ -147,7 +147,7 @@ namespace KaingaRealEstate
             this.txtStreetAddress.Location = new System.Drawing.Point(198, 188);
             this.txtStreetAddress.Name = "txtStreetAddress";
             this.txtStreetAddress.ReadOnly = true;
-            this.txtStreetAddress.Size = new System.Drawing.Size(427, 32);
+            this.txtStreetAddress.Size = new System.Drawing.Size(427, 27);
             this.txtStreetAddress.TabIndex = 10;
             // 
             // txtPropertyDescription
@@ -155,7 +155,7 @@ namespace KaingaRealEstate
             this.txtPropertyDescription.Location = new System.Drawing.Point(198, 235);
             this.txtPropertyDescription.Name = "txtPropertyDescription";
             this.txtPropertyDescription.ReadOnly = true;
-            this.txtPropertyDescription.Size = new System.Drawing.Size(427, 32);
+            this.txtPropertyDescription.Size = new System.Drawing.Size(427, 27);
             this.txtPropertyDescription.TabIndex = 11;
             // 
             // txtLastName
@@ -163,7 +163,7 @@ namespace KaingaRealEstate
             this.txtLastName.Location = new System.Drawing.Point(198, 282);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
-            this.txtLastName.Size = new System.Drawing.Size(211, 32);
+            this.txtLastName.Size = new System.Drawing.Size(211, 27);
             this.txtLastName.TabIndex = 12;
             // 
             // txtFirstName
@@ -171,16 +171,16 @@ namespace KaingaRealEstate
             this.txtFirstName.Location = new System.Drawing.Point(198, 329);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
-            this.txtFirstName.Size = new System.Drawing.Size(211, 32);
+            this.txtFirstName.Size = new System.Drawing.Size(211, 27);
             this.txtFirstName.TabIndex = 13;
             // 
             // lstOffers
             // 
             this.lstOffers.FormattingEnabled = true;
-            this.lstOffers.ItemHeight = 24;
+            this.lstOffers.ItemHeight = 19;
             this.lstOffers.Location = new System.Drawing.Point(198, 374);
             this.lstOffers.Name = "lstOffers";
-            this.lstOffers.Size = new System.Drawing.Size(667, 124);
+            this.lstOffers.Size = new System.Drawing.Size(593, 118);
             this.lstOffers.TabIndex = 14;
             this.lstOffers.SelectedIndexChanged += new System.EventHandler(this.lstOffers_SelectedIndexChanged);
             // 
@@ -211,7 +211,7 @@ namespace KaingaRealEstate
             this.lblPleaseSelectAnOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblPleaseSelectAnOption.Location = new System.Drawing.Point(194, 67);
             this.lblPleaseSelectAnOption.Name = "lblPleaseSelectAnOption";
-            this.lblPleaseSelectAnOption.Size = new System.Drawing.Size(207, 24);
+            this.lblPleaseSelectAnOption.Size = new System.Drawing.Size(166, 19);
             this.lblPleaseSelectAnOption.TabIndex = 111;
             this.lblPleaseSelectAnOption.Text = "*Please select an option";
             // 
@@ -222,7 +222,7 @@ namespace KaingaRealEstate
             this.lblRequired.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblRequired.Location = new System.Drawing.Point(178, 364);
             this.lblRequired.Name = "lblRequired";
-            this.lblRequired.Size = new System.Drawing.Size(20, 24);
+            this.lblRequired.Size = new System.Drawing.Size(17, 19);
             this.lblRequired.TabIndex = 112;
             this.lblRequired.Text = "*";
             // 
@@ -233,13 +233,13 @@ namespace KaingaRealEstate
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(178, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 24);
+            this.label2.Size = new System.Drawing.Size(17, 19);
             this.label2.TabIndex = 113;
             this.label2.Text = "*";
             // 
             // SellPropertyForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 626);
             this.Controls.Add(this.label2);

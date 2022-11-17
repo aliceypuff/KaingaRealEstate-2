@@ -18,6 +18,8 @@ namespace KaingaRealEstate
         private AssistantAdministratorMainForm frmMenu;
         private int aSellerID;
         private CurrencyManager cmSeller;
+
+        bool reset = false;
         public UpdateSellerForm(DataController dc, AssistantAdministratorMainForm mnu)
         {
             InitializeComponent();
@@ -30,6 +32,10 @@ namespace KaingaRealEstate
         {
             this.Hide();
             frmMenu.Show();
+
+            reset = true;
+            bool detailValid = ValidateChildren(ValidationConstraints.Enabled);
+
             ClearFields();
         }
         private void ClearFields()
@@ -59,6 +65,11 @@ namespace KaingaRealEstate
         private void cboSeller_SelectedIndexChanged(object sender, EventArgs e)
         {
             string seller;
+
+            if (reset)
+            {
+                reset = false;
+            }
 
             if (cboSeller.SelectedItem != null)
             {
@@ -148,6 +159,13 @@ namespace KaingaRealEstate
             string tbName = tb.Name;
             Label tbLabel = this.Controls.Find("lbl" + tbName.Substring(3), true)[0] as Label;
 
+            if (reset)
+            {
+                e.Cancel = false;
+                errorProviderDetails.SetError(tb, null);
+                return;
+            }
+            
             if (validateContent(tb))
             {
                 e.Cancel = false;
