@@ -37,7 +37,6 @@ namespace KaingaRealEstate
             bool detailValid = ValidateChildren(ValidationConstraints.Enabled);
 
             ClearFields();
-            //ClearErrors();
         }
         private void ClearFields()
         {
@@ -149,12 +148,6 @@ namespace KaingaRealEstate
             nudSalary.Enabled = true;
             cboCert.Enabled = true;
         }
-        //private void ClearErrors(object sender, EventArgs e)
-        //{
-        //    TextBox tb = (TextBox)sender;
-        //    string tbName = tb.Name;
-        //    errorProviderDetails.SetError(tb, null);
-        //}
         private void UpdateAgentForm_Load(object sender, EventArgs e)
         {
             ClearFields();

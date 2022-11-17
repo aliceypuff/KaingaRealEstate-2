@@ -26,75 +26,33 @@ namespace KaingaRealEstate
         }
         private void ClearFields()
         {
-            txtSuburbID.Text = "";
-            txtSuburbName.Text = "";
-            txtPostcode.Text = "";
+            txtCategoryID.Text = "";
+            txtCatDesc.Text = "";
             cboCategory.Text = "";
             cboCategory.Items.Clear();
+            cboLevel.Items.Clear();
+            cboLevel.Text = "";
         }
-        private void LoadSuburbs()
+        private void LoadCategories()
         {
-            foreach (DataRow drSuburb in DC.dtSuburb.Rows)
+            foreach (DataRow drCat in DC.dtCategory.Rows)
             {
-                cboCategory.Items.Add(drSuburb["suburbID"] + (" ") + drSuburb["suburbName"] + (" ") + drSuburb["postcode"]);
+                cboCategory.Items.Add(drCat["categoryID"] + (" ") + drCat["categoryDescription"]);
             }
+            cboLevel.Items.AddRange(Enumerable.Range(1, 8).Select(i => (object)i).ToArray());
         }
         private void UpdateCategoryForm_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void cboSuburb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string suburb;
-
-            if (cboCategory.SelectedItem != null)
-            {
-                // get the selected suburb
-                suburb = cboCategory.SelectedItem.ToString();
-                // split the string from cbo
-                string[] parts = suburb.Split(' ');
-                // extract ID
-                aSuburbID = Convert.ToInt32(parts[0]);
-                // Get the position of the selected suburb and assigns it to the Position property of cmSuburb
-                cmSuburb.Position = DC.suburbView.Find(aSuburbID);
-                // Get the datarow for the selected suburb
-                DataRow drSuburb = DC.dtSuburb.Rows[cmSuburb.Position];
-                // Populate suburb textboxes
-                txtSuburbID.Text = drSuburb["suburbID"].ToString();
-                txtSuburbName.Text = drSuburb["suburbName"].ToString();
-                txtPostcode.Text = drSuburb["postcode"].ToString();
-            }
-            EnableUpdate(this);
+            ClearFields();
+            LoadCategories();
+            DisableUpdate(this);
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             frmMenu.Show();
             ClearFields();
-        }
-
-        private void btnUpdateSuburb_Click(object sender, EventArgs e)
-        {
-            bool detailValid = ValidateChildren(ValidationConstraints.Enabled);
-            if (detailValid)
-            {
-                // get data row for selected suburb
-                DataRow updateSuburbRow = DC.dtSuburb.Rows[cmSuburb.Position];
-                // assign textbox values to updateSuburbRow
-                updateSuburbRow["suburbName"] = txtSuburbName.Text;
-                updateSuburbRow["postcode"] = txtPostcode.Text;
-                // End current edit if confirmed
-                if (MessageBox.Show("Are you sure you want to update this suburb?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    cmSuburb.EndCurrentEdit();
-                    DC.UpdateSuburb();
-                    MessageBox.Show("Suburb updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearFields();
-                    LoadSuburbs();
-                }
-            }
         }
         private void DisableUpdate(Control parent)
         {
@@ -144,22 +102,53 @@ namespace KaingaRealEstate
                 fieldIsValid = false;
             }
 
-            else if (tbName == "txtPostcode")
-            {
-                string postCode = tb.Text;
-                Regex regex = new Regex(@"^\d{4}$");
-                Match match = regex.Match(postCode);
-
-                fieldIsValid = match.Success;
-            }
-
-            else
-            {
-                string alpha = tb.Text;
-                fieldIsValid = alpha.All(x => char.IsLetter(x) || x == ' ');
-            }
-
             return fieldIsValid;
+        }
+
+        private void cboCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string cat;
+
+            if (cboCategory.SelectedItem != null)
+            {
+                // get the selected cat
+                cat = cboCategory.SelectedItem.ToString();
+                // split the string from cbo
+                string[] parts = cat.Split(' ');
+                // extract ID
+                aCategoryID = Convert.ToInt32(parts[0]);
+                // Get the position of the selected cat and assigns it to the Position property of cm
+                cmCategory.Position = DC.categoryView.Find(aCategoryID);
+                // Get the datarow for the selected cat
+                DataRow drCategory = DC.dtCategory.Rows[cmCategory.Position];
+                // Populate cat textboxes
+                txtCategoryID.Text = drCategory["categoryID"].ToString();
+                txtCatDesc.Text = drCategory["categoryDescription"].ToString();
+                cboLevel.Text = drCategory["level"].ToString();
+            }
+            EnableUpdate(this);
+        }
+
+        private void btnUpdateCat_Click(object sender, EventArgs e)
+        {
+            bool detailValid = ValidateChildren(ValidationConstraints.Enabled);
+            if (detailValid)
+            {
+                // get data row for selected cat
+                DataRow updateCatRow = DC.dtCategory.Rows[cmCategory.Position];
+                // assign textbox values to updateCatRow
+                updateCatRow["categoryDescription"] = txtCatDesc.Text;
+                updateCatRow["level"] = cboLevel.Text;
+                // End current edit if confirmed
+                if (MessageBox.Show("Are you sure you want to update this category?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    cmCategory.EndCurrentEdit();
+                    DC.UpdateSuburb();
+                    MessageBox.Show("Category updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFields();
+                    LoadCategories();
+                }
+            }
         }
     }
 }

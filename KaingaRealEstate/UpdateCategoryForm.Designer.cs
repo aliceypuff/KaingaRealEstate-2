@@ -36,17 +36,17 @@ namespace KaingaRealEstate
             this.errorProviderDetails = new System.Windows.Forms.ErrorProvider(this.components);
             this.kaingaRealEstateDataSet = new KaingaRealEstate.KaingaRealEstateDataSet();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtPostcode = new System.Windows.Forms.TextBox();
-            this.txtSuburbName = new System.Windows.Forms.TextBox();
-            this.txtSuburbID = new System.Windows.Forms.TextBox();
+            this.txtCatDesc = new System.Windows.Forms.TextBox();
+            this.txtCategoryID = new System.Windows.Forms.TextBox();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.lblLevel = new System.Windows.Forms.Label();
             this.lblCatDesc = new System.Windows.Forms.Label();
-            this.lblSuburbID = new System.Windows.Forms.Label();
+            this.lblCategoryID = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.btnUpdateSuburb = new System.Windows.Forms.Button();
+            this.btnUpdateCat = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.cboLevel = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kaingaRealEstateDataSet)).BeginInit();
             this.SuspendLayout();
@@ -108,29 +108,22 @@ namespace KaingaRealEstate
             this.label12.TabIndex = 190;
             this.label12.Text = "*";
             // 
-            // txtPostcode
+            // txtCatDesc
             // 
-            this.txtPostcode.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPostcode.Location = new System.Drawing.Point(186, 248);
-            this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(42, 27);
-            this.txtPostcode.TabIndex = 186;
+            this.txtCatDesc.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCatDesc.Location = new System.Drawing.Point(187, 200);
+            this.txtCatDesc.Name = "txtCatDesc";
+            this.txtCatDesc.Size = new System.Drawing.Size(246, 27);
+            this.txtCatDesc.TabIndex = 185;
+            this.txtCatDesc.Validating += new System.ComponentModel.CancelEventHandler(this.tbValidation);
             // 
-            // txtSuburbName
+            // txtCategoryID
             // 
-            this.txtSuburbName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSuburbName.Location = new System.Drawing.Point(187, 200);
-            this.txtSuburbName.Name = "txtSuburbName";
-            this.txtSuburbName.Size = new System.Drawing.Size(246, 27);
-            this.txtSuburbName.TabIndex = 185;
-            // 
-            // txtSuburbID
-            // 
-            this.txtSuburbID.Location = new System.Drawing.Point(186, 152);
-            this.txtSuburbID.Name = "txtSuburbID";
-            this.txtSuburbID.ReadOnly = true;
-            this.txtSuburbID.Size = new System.Drawing.Size(79, 27);
-            this.txtSuburbID.TabIndex = 184;
+            this.txtCategoryID.Location = new System.Drawing.Point(186, 152);
+            this.txtCategoryID.Name = "txtCategoryID";
+            this.txtCategoryID.ReadOnly = true;
+            this.txtCategoryID.Size = new System.Drawing.Size(79, 27);
+            this.txtCategoryID.TabIndex = 184;
             // 
             // cboCategory
             // 
@@ -140,7 +133,7 @@ namespace KaingaRealEstate
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(473, 27);
             this.cboCategory.TabIndex = 183;
-            this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.cboSuburb_SelectedIndexChanged);
+            this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.cboCategory_SelectedIndexChanged);
             // 
             // lblLevel
             // 
@@ -162,15 +155,15 @@ namespace KaingaRealEstate
             this.lblCatDesc.Text = "Category Description:";
             this.lblCatDesc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblSuburbID
+            // lblCategoryID
             // 
-            this.lblSuburbID.AutoSize = true;
-            this.lblSuburbID.Location = new System.Drawing.Point(92, 155);
-            this.lblSuburbID.Name = "lblSuburbID";
-            this.lblSuburbID.Size = new System.Drawing.Size(75, 19);
-            this.lblSuburbID.TabIndex = 180;
-            this.lblSuburbID.Text = "Suburb ID:";
-            this.lblSuburbID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblCategoryID.AutoSize = true;
+            this.lblCategoryID.Location = new System.Drawing.Point(92, 155);
+            this.lblCategoryID.Name = "lblCategoryID";
+            this.lblCategoryID.Size = new System.Drawing.Size(89, 19);
+            this.lblCategoryID.TabIndex = 180;
+            this.lblCategoryID.Text = "Category ID:";
+            this.lblCategoryID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblCategory
             // 
@@ -184,7 +177,7 @@ namespace KaingaRealEstate
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(325, 343);
+            this.btnReturn.Location = new System.Drawing.Point(463, 343);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(196, 48);
             this.btnReturn.TabIndex = 178;
@@ -192,15 +185,15 @@ namespace KaingaRealEstate
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // btnUpdateSuburb
+            // btnUpdateCat
             // 
-            this.btnUpdateSuburb.Location = new System.Drawing.Point(50, 343);
-            this.btnUpdateSuburb.Name = "btnUpdateSuburb";
-            this.btnUpdateSuburb.Size = new System.Drawing.Size(196, 48);
-            this.btnUpdateSuburb.TabIndex = 177;
-            this.btnUpdateSuburb.Text = "Update Suburb";
-            this.btnUpdateSuburb.UseVisualStyleBackColor = true;
-            this.btnUpdateSuburb.Click += new System.EventHandler(this.btnUpdateSuburb_Click);
+            this.btnUpdateCat.Location = new System.Drawing.Point(50, 343);
+            this.btnUpdateCat.Name = "btnUpdateCat";
+            this.btnUpdateCat.Size = new System.Drawing.Size(196, 48);
+            this.btnUpdateCat.TabIndex = 177;
+            this.btnUpdateCat.Text = "Update Category";
+            this.btnUpdateCat.UseVisualStyleBackColor = true;
+            this.btnUpdateCat.Click += new System.EventHandler(this.btnUpdateCat_Click);
             // 
             // lblTitle
             // 
@@ -212,25 +205,37 @@ namespace KaingaRealEstate
             this.lblTitle.TabIndex = 176;
             this.lblTitle.Text = "Update Category";
             // 
+            // cboLevel
+            // 
+            this.cboLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLevel.FormattingEnabled = true;
+            this.cboLevel.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.cboLevel.Location = new System.Drawing.Point(186, 245);
+            this.cboLevel.Name = "cboLevel";
+            this.cboLevel.Size = new System.Drawing.Size(54, 27);
+            this.cboLevel.TabIndex = 191;
+            // 
             // UpdateCategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 413);
+            this.Controls.Add(this.cboLevel);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblPleaseSelectAnOption);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtPostcode);
-            this.Controls.Add(this.txtSuburbName);
-            this.Controls.Add(this.txtSuburbID);
+            this.Controls.Add(this.txtCatDesc);
+            this.Controls.Add(this.txtCategoryID);
             this.Controls.Add(this.cboCategory);
             this.Controls.Add(this.lblLevel);
             this.Controls.Add(this.lblCatDesc);
-            this.Controls.Add(this.lblSuburbID);
+            this.Controls.Add(this.lblCategoryID);
             this.Controls.Add(this.lblCategory);
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.btnUpdateSuburb);
+            this.Controls.Add(this.btnUpdateCat);
             this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -251,17 +256,17 @@ namespace KaingaRealEstate
         private System.Windows.Forms.Label lblPleaseSelectAnOption;
         private System.Windows.Forms.ErrorProvider errorProviderDetails;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtPostcode;
-        private System.Windows.Forms.TextBox txtSuburbName;
-        private System.Windows.Forms.TextBox txtSuburbID;
+        private System.Windows.Forms.TextBox txtCatDesc;
+        private System.Windows.Forms.TextBox txtCategoryID;
         private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.Label lblLevel;
         private System.Windows.Forms.Label lblCatDesc;
-        private System.Windows.Forms.Label lblSuburbID;
+        private System.Windows.Forms.Label lblCategoryID;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Button btnReturn;
-        private System.Windows.Forms.Button btnUpdateSuburb;
+        private System.Windows.Forms.Button btnUpdateCat;
         private System.Windows.Forms.Label lblTitle;
         private KaingaRealEstateDataSet kaingaRealEstateDataSet;
+        private System.Windows.Forms.ComboBox cboLevel;
     }
 }

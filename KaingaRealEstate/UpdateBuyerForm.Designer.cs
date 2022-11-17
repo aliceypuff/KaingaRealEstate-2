@@ -89,7 +89,7 @@ namespace KaingaRealEstate
             this.txtCity.BackColor = System.Drawing.SystemColors.Window;
             this.txtCity.Location = new System.Drawing.Point(199, 317);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(245, 32);
+            this.txtCity.Size = new System.Drawing.Size(245, 27);
             this.txtCity.TabIndex = 158;
             this.txtCity.Validating += new System.ComponentModel.CancelEventHandler(this.tbValidation);
             // 
@@ -118,7 +118,7 @@ namespace KaingaRealEstate
             "No"});
             this.cboCreditStatus.Location = new System.Drawing.Point(592, 395);
             this.cboCreditStatus.Name = "cboCreditStatus";
-            this.cboCreditStatus.Size = new System.Drawing.Size(93, 32);
+            this.cboCreditStatus.Size = new System.Drawing.Size(93, 27);
             this.cboCreditStatus.TabIndex = 151;
             // 
             // lblPhone
@@ -135,7 +135,7 @@ namespace KaingaRealEstate
             this.txtPhone.BackColor = System.Drawing.SystemColors.Window;
             this.txtPhone.Location = new System.Drawing.Point(199, 395);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(123, 32);
+            this.txtPhone.Size = new System.Drawing.Size(123, 27);
             this.txtPhone.TabIndex = 149;
             this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.tbValidation);
             // 
@@ -153,7 +153,7 @@ namespace KaingaRealEstate
             this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
             this.txtEmail.Location = new System.Drawing.Point(199, 356);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(284, 32);
+            this.txtEmail.Size = new System.Drawing.Size(284, 27);
             this.txtEmail.TabIndex = 147;
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.tbValidation);
             // 
@@ -171,7 +171,7 @@ namespace KaingaRealEstate
             this.txtSuburb.BackColor = System.Drawing.SystemColors.Window;
             this.txtSuburb.Location = new System.Drawing.Point(199, 278);
             this.txtSuburb.Name = "txtSuburb";
-            this.txtSuburb.Size = new System.Drawing.Size(245, 32);
+            this.txtSuburb.Size = new System.Drawing.Size(245, 27);
             this.txtSuburb.TabIndex = 145;
             this.txtSuburb.Validating += new System.ComponentModel.CancelEventHandler(this.tbValidation);
             // 
@@ -189,7 +189,7 @@ namespace KaingaRealEstate
             this.txtStreetAddress.BackColor = System.Drawing.SystemColors.Window;
             this.txtStreetAddress.Location = new System.Drawing.Point(199, 239);
             this.txtStreetAddress.Name = "txtStreetAddress";
-            this.txtStreetAddress.Size = new System.Drawing.Size(486, 32);
+            this.txtStreetAddress.Size = new System.Drawing.Size(486, 27);
             this.txtStreetAddress.TabIndex = 143;
             this.txtStreetAddress.Validating += new System.ComponentModel.CancelEventHandler(this.tbValidation);
             // 
@@ -198,7 +198,7 @@ namespace KaingaRealEstate
             this.txtFirstName.BackColor = System.Drawing.SystemColors.Window;
             this.txtFirstName.Location = new System.Drawing.Point(199, 200);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(272, 32);
+            this.txtFirstName.Size = new System.Drawing.Size(272, 27);
             this.txtFirstName.TabIndex = 138;
             this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.tbValidation);
             // 
@@ -207,7 +207,7 @@ namespace KaingaRealEstate
             this.txtLastName.BackColor = System.Drawing.SystemColors.Window;
             this.txtLastName.Location = new System.Drawing.Point(199, 161);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(272, 32);
+            this.txtLastName.Size = new System.Drawing.Size(272, 27);
             this.txtLastName.TabIndex = 137;
             this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.tbValidation);
             // 
@@ -216,7 +216,7 @@ namespace KaingaRealEstate
             this.txtBuyerID.Location = new System.Drawing.Point(199, 122);
             this.txtBuyerID.Name = "txtBuyerID";
             this.txtBuyerID.ReadOnly = true;
-            this.txtBuyerID.Size = new System.Drawing.Size(79, 32);
+            this.txtBuyerID.Size = new System.Drawing.Size(79, 27);
             this.txtBuyerID.TabIndex = 136;
             // 
             // cboBuyer
@@ -225,7 +225,7 @@ namespace KaingaRealEstate
             this.cboBuyer.FormattingEnabled = true;
             this.cboBuyer.Location = new System.Drawing.Point(199, 83);
             this.cboBuyer.Name = "cboBuyer";
-            this.cboBuyer.Size = new System.Drawing.Size(486, 32);
+            this.cboBuyer.Size = new System.Drawing.Size(486, 27);
             this.cboBuyer.TabIndex = 135;
             this.cboBuyer.SelectedIndexChanged += new System.EventHandler(this.cboBuyer_SelectedIndexChanged);
             // 
@@ -292,7 +292,7 @@ namespace KaingaRealEstate
             this.lblTitle.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(294, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(189, 37);
+            this.lblTitle.Size = new System.Drawing.Size(150, 29);
             this.lblTitle.TabIndex = 128;
             this.lblTitle.Text = "Update Buyer";
             // 
@@ -302,7 +302,7 @@ namespace KaingaRealEstate
             this.txtAgentFirstName.Location = new System.Drawing.Point(199, 473);
             this.txtAgentFirstName.Name = "txtAgentFirstName";
             this.txtAgentFirstName.ReadOnly = true;
-            this.txtAgentFirstName.Size = new System.Drawing.Size(272, 32);
+            this.txtAgentFirstName.Size = new System.Drawing.Size(272, 27);
             this.txtAgentFirstName.TabIndex = 164;
             // 
             // txtAgentLastName
@@ -311,7 +311,7 @@ namespace KaingaRealEstate
             this.txtAgentLastName.Location = new System.Drawing.Point(199, 434);
             this.txtAgentLastName.Name = "txtAgentLastName";
             this.txtAgentLastName.ReadOnly = true;
-            this.txtAgentLastName.Size = new System.Drawing.Size(272, 32);
+            this.txtAgentLastName.Size = new System.Drawing.Size(272, 27);
             this.txtAgentLastName.TabIndex = 163;
             // 
             // lblAgentFirstName
@@ -349,7 +349,7 @@ namespace KaingaRealEstate
             "No"});
             this.cboMortStatus.Location = new System.Drawing.Point(543, 125);
             this.cboMortStatus.Name = "cboMortStatus";
-            this.cboMortStatus.Size = new System.Drawing.Size(142, 32);
+            this.cboMortStatus.Size = new System.Drawing.Size(142, 27);
             this.cboMortStatus.TabIndex = 165;
             // 
             // lblPleaseSelectAnOption
@@ -359,7 +359,7 @@ namespace KaingaRealEstate
             this.lblPleaseSelectAnOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblPleaseSelectAnOption.Location = new System.Drawing.Point(196, 56);
             this.lblPleaseSelectAnOption.Name = "lblPleaseSelectAnOption";
-            this.lblPleaseSelectAnOption.Size = new System.Drawing.Size(182, 24);
+            this.lblPleaseSelectAnOption.Size = new System.Drawing.Size(145, 19);
             this.lblPleaseSelectAnOption.TabIndex = 168;
             this.lblPleaseSelectAnOption.Text = "Please select a buyer";
             // 
@@ -372,7 +372,7 @@ namespace KaingaRealEstate
             this.label8.Location = new System.Drawing.Point(180, 279);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(20, 24);
+            this.label8.Size = new System.Drawing.Size(17, 19);
             this.label8.TabIndex = 169;
             this.label8.Text = "*";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -384,7 +384,7 @@ namespace KaingaRealEstate
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label9.Location = new System.Drawing.Point(196, 515);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(183, 24);
+            this.label9.Size = new System.Drawing.Size(147, 19);
             this.label9.TabIndex = 170;
             this.label9.Text = "*Cannot be left blank";
             // 
@@ -397,7 +397,7 @@ namespace KaingaRealEstate
             this.label10.Location = new System.Drawing.Point(180, 240);
             this.label10.Margin = new System.Windows.Forms.Padding(0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(20, 24);
+            this.label10.Size = new System.Drawing.Size(17, 19);
             this.label10.TabIndex = 171;
             this.label10.Text = "*";
             // 
@@ -410,7 +410,7 @@ namespace KaingaRealEstate
             this.label11.Location = new System.Drawing.Point(180, 201);
             this.label11.Margin = new System.Windows.Forms.Padding(0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(20, 24);
+            this.label11.Size = new System.Drawing.Size(17, 19);
             this.label11.TabIndex = 172;
             this.label11.Text = "*";
             // 
@@ -423,7 +423,7 @@ namespace KaingaRealEstate
             this.label12.Location = new System.Drawing.Point(180, 162);
             this.label12.Margin = new System.Windows.Forms.Padding(0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(20, 24);
+            this.label12.Size = new System.Drawing.Size(17, 19);
             this.label12.TabIndex = 173;
             this.label12.Text = "*";
             this.label12.Click += new System.EventHandler(this.label12_Click);
@@ -437,7 +437,7 @@ namespace KaingaRealEstate
             this.label1.Location = new System.Drawing.Point(180, 318);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 24);
+            this.label1.Size = new System.Drawing.Size(17, 19);
             this.label1.TabIndex = 176;
             this.label1.Text = "*";
             // 
@@ -450,7 +450,7 @@ namespace KaingaRealEstate
             this.label2.Location = new System.Drawing.Point(180, 357);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 24);
+            this.label2.Size = new System.Drawing.Size(17, 19);
             this.label2.TabIndex = 175;
             this.label2.Text = "*";
             // 
@@ -463,7 +463,7 @@ namespace KaingaRealEstate
             this.label3.Location = new System.Drawing.Point(180, 396);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 24);
+            this.label3.Size = new System.Drawing.Size(17, 19);
             this.label3.TabIndex = 174;
             this.label3.Text = "*";
             // 
@@ -476,7 +476,7 @@ namespace KaingaRealEstate
             this.label4.Location = new System.Drawing.Point(520, 126);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 24);
+            this.label4.Size = new System.Drawing.Size(17, 19);
             this.label4.TabIndex = 178;
             this.label4.Text = "*";
             // 
@@ -489,13 +489,13 @@ namespace KaingaRealEstate
             this.label6.Location = new System.Drawing.Point(569, 395);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 24);
+            this.label6.Size = new System.Drawing.Size(17, 19);
             this.label6.TabIndex = 177;
             this.label6.Text = "*";
             // 
             // UpdateBuyerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 611);
             this.Controls.Add(this.label4);
