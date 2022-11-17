@@ -30,7 +30,9 @@ namespace KaingaRealEstate
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (((txtUsername.Text == "assistant1") & (txtPassword.Text == "PWAA1")) | ((txtUsername.Text == "assistant2") & (txtPassword.Text == "PWAA2")))
+            if (((txtUsername.Text == "assistant1") & (txtPassword.Text == "PWAA1")) | ((txtUsername.Text == "assistant2") & (txtPassword.Text == "PWAA2"))
+                //| ((txtUsername.Text == "") & (txtPassword.Text == ""))
+                )
             {
                 failedLogin = 0;
                 if (frmAssistantAdministratorMain == null)

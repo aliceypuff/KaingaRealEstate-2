@@ -56,7 +56,7 @@ namespace KaingaRealEstate
             this.txtPostcode.BackColor = System.Drawing.SystemColors.Window;
             this.txtPostcode.Location = new System.Drawing.Point(186, 248);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(60, 32);
+            this.txtPostcode.Size = new System.Drawing.Size(60, 27);
             this.txtPostcode.TabIndex = 53;
             this.txtPostcode.Validating += new System.ComponentModel.CancelEventHandler(this.tbValidation);
             // 
@@ -65,7 +65,7 @@ namespace KaingaRealEstate
             this.txtSuburbName.BackColor = System.Drawing.SystemColors.Window;
             this.txtSuburbName.Location = new System.Drawing.Point(187, 200);
             this.txtSuburbName.Name = "txtSuburbName";
-            this.txtSuburbName.Size = new System.Drawing.Size(246, 32);
+            this.txtSuburbName.Size = new System.Drawing.Size(246, 27);
             this.txtSuburbName.TabIndex = 51;
             this.txtSuburbName.Validating += new System.ComponentModel.CancelEventHandler(this.tbValidation);
             // 
@@ -74,7 +74,7 @@ namespace KaingaRealEstate
             this.txtSuburbID.Location = new System.Drawing.Point(186, 152);
             this.txtSuburbID.Name = "txtSuburbID";
             this.txtSuburbID.ReadOnly = true;
-            this.txtSuburbID.Size = new System.Drawing.Size(79, 32);
+            this.txtSuburbID.Size = new System.Drawing.Size(79, 27);
             this.txtSuburbID.TabIndex = 50;
             // 
             // cboSuburb
@@ -83,16 +83,16 @@ namespace KaingaRealEstate
             this.cboSuburb.FormattingEnabled = true;
             this.cboSuburb.Location = new System.Drawing.Point(186, 104);
             this.cboSuburb.Name = "cboSuburb";
-            this.cboSuburb.Size = new System.Drawing.Size(323, 32);
+            this.cboSuburb.Size = new System.Drawing.Size(323, 27);
             this.cboSuburb.TabIndex = 49;
             this.cboSuburb.SelectedIndexChanged += new System.EventHandler(this.cboSuburb_SelectedIndexChanged);
             // 
             // lblPostcode
             // 
             this.lblPostcode.AutoSize = true;
-            this.lblPostcode.Location = new System.Drawing.Point(80, 251);
+            this.lblPostcode.Location = new System.Drawing.Point(98, 251);
             this.lblPostcode.Name = "lblPostcode";
-            this.lblPostcode.Size = new System.Drawing.Size(91, 24);
+            this.lblPostcode.Size = new System.Drawing.Size(72, 19);
             this.lblPostcode.TabIndex = 48;
             this.lblPostcode.Text = "Postcode:";
             this.lblPostcode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -100,9 +100,9 @@ namespace KaingaRealEstate
             // lblSuburbName
             // 
             this.lblSuburbName.AutoSize = true;
-            this.lblSuburbName.Location = new System.Drawing.Point(42, 203);
+            this.lblSuburbName.Location = new System.Drawing.Point(71, 203);
             this.lblSuburbName.Name = "lblSuburbName";
-            this.lblSuburbName.Size = new System.Drawing.Size(129, 24);
+            this.lblSuburbName.Size = new System.Drawing.Size(99, 19);
             this.lblSuburbName.TabIndex = 45;
             this.lblSuburbName.Text = "Suburb Name:";
             this.lblSuburbName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -110,9 +110,9 @@ namespace KaingaRealEstate
             // lblSuburbID
             // 
             this.lblSuburbID.AutoSize = true;
-            this.lblSuburbID.Location = new System.Drawing.Point(74, 155);
+            this.lblSuburbID.Location = new System.Drawing.Point(95, 155);
             this.lblSuburbID.Name = "lblSuburbID";
-            this.lblSuburbID.Size = new System.Drawing.Size(97, 24);
+            this.lblSuburbID.Size = new System.Drawing.Size(75, 19);
             this.lblSuburbID.TabIndex = 44;
             this.lblSuburbID.Text = "Suburb ID:";
             this.lblSuburbID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -120,9 +120,9 @@ namespace KaingaRealEstate
             // lblSuburb
             // 
             this.lblSuburb.AutoSize = true;
-            this.lblSuburb.Location = new System.Drawing.Point(96, 107);
+            this.lblSuburb.Location = new System.Drawing.Point(113, 107);
             this.lblSuburb.Name = "lblSuburb";
-            this.lblSuburb.Size = new System.Drawing.Size(75, 24);
+            this.lblSuburb.Size = new System.Drawing.Size(57, 19);
             this.lblSuburb.TabIndex = 43;
             this.lblSuburb.Text = "Suburb:";
             this.lblSuburb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -153,7 +153,7 @@ namespace KaingaRealEstate
             this.lblTitle.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(190, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(205, 37);
+            this.lblTitle.Size = new System.Drawing.Size(164, 29);
             this.lblTitle.TabIndex = 40;
             this.lblTitle.Text = "Update Suburb";
             // 
@@ -173,7 +173,7 @@ namespace KaingaRealEstate
             this.lblPleaseSelectAnOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblPleaseSelectAnOption.Location = new System.Drawing.Point(183, 77);
             this.lblPleaseSelectAnOption.Name = "lblPleaseSelectAnOption";
-            this.lblPleaseSelectAnOption.Size = new System.Drawing.Size(191, 24);
+            this.lblPleaseSelectAnOption.Size = new System.Drawing.Size(152, 19);
             this.lblPleaseSelectAnOption.TabIndex = 169;
             this.lblPleaseSelectAnOption.Text = "Please select a suburb";
             // 
@@ -184,7 +184,7 @@ namespace KaingaRealEstate
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label9.Location = new System.Drawing.Point(183, 296);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(183, 24);
+            this.label9.Size = new System.Drawing.Size(147, 19);
             this.label9.TabIndex = 171;
             this.label9.Text = "*Cannot be left blank";
             // 
@@ -197,7 +197,7 @@ namespace KaingaRealEstate
             this.label12.Location = new System.Drawing.Point(164, 200);
             this.label12.Margin = new System.Windows.Forms.Padding(0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(20, 24);
+            this.label12.Size = new System.Drawing.Size(17, 19);
             this.label12.TabIndex = 175;
             this.label12.Text = "*";
             // 
@@ -210,13 +210,13 @@ namespace KaingaRealEstate
             this.label11.Location = new System.Drawing.Point(164, 248);
             this.label11.Margin = new System.Windows.Forms.Padding(0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(20, 24);
+            this.label11.Size = new System.Drawing.Size(17, 19);
             this.label11.TabIndex = 174;
             this.label11.Text = "*";
             // 
             // UpdateSuburbForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 413);
             this.Controls.Add(this.label12);

@@ -19,6 +19,7 @@ namespace KaingaRealEstate
         private int aAgentID;
         private CurrencyManager cmAgent;
 
+        bool reset = false;
         public UpdateAgentForm(DataController dc, AssistantAdministratorMainForm mnu)
         {
             InitializeComponent();
@@ -31,6 +32,10 @@ namespace KaingaRealEstate
         {
             this.Hide();
             frmMenu.Show();
+
+            reset = true;
+            bool detailValid = ValidateChildren(ValidationConstraints.Enabled);
+
             ClearFields();
             //ClearErrors();
         }
@@ -61,6 +66,12 @@ namespace KaingaRealEstate
         private void cboAgent_SelectedIndexChanged(object sender, EventArgs e)
         {
             string agent;
+
+            if(reset)
+            {
+                reset = false;
+            }
+
 
             if (cboAgent.SelectedItem != null)
             {
@@ -156,6 +167,10 @@ namespace KaingaRealEstate
             TextBox tb = (TextBox)sender;
             string tbName = tb.Name;
             Label tbLabel = this.Controls.Find("lbl" + tbName.Substring(3), true)[0] as Label;
+
+            if (reset) {
+                e.Cancel = false;
+            }
 
             if (validateContent(tb))
             {
